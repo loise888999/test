@@ -32,6 +32,9 @@ public class testClient
     	unObjetClient.afficheFichier();
     	unObjetClient.getPremierMot(tableu[0]);
     	unObjetClient.getPDeuxiemeMot(tableu[0]);
+    	String name;
+    	name = unObjetClient.trouverNom("102");
+    	System.out.println(name);
         
  
     }

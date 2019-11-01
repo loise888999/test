@@ -69,7 +69,7 @@ public class IOFichier implements IOinterface, Phrase
 				
 				tableau[i] = scanner.nextLine();
 				i++;
-				System.out.println(scanner.nextLine());
+				//System.out.println(scanner.nextLine());
 				
 			}
 			scanner.close();
@@ -119,7 +119,7 @@ public class IOFichier implements IOinterface, Phrase
     			pas_espace = false;
     		}
 		}
-    	System.out.println(mot_premiert);
+    	//System.out.println(mot_premiert);
     	return mot_premiert;
     }
     
@@ -143,7 +143,7 @@ public class IOFichier implements IOinterface, Phrase
     		}
 		}
    
-    	System.out.println(deusiem_mot);
+    	//System.out.println(deusiem_mot);
     	
     	return deusiem_mot;
     }
@@ -158,8 +158,31 @@ public class IOFichier implements IOinterface, Phrase
     public String trouverNom(String id)
     {
         // Insérez votre code ici
-        String nom = new String();
-        
+        String nom = "invalid";
+        String id_client;
+        Integer longeur_id;
+        Boolean meme_id = true;
+        String[] persone = this.retourneFichier(null);
+        longeur_id = id.length();
+        for( int i = 0; i < persone.length; i++ ) {
+        	
+        	//System.out.println(persone[i]+i);
+        	id_client=getPremierMot(persone[i]);
+        	
+        	for (int ii = 0; ii < id.length();ii++) {
+        		
+	        	if ((id_client.charAt(ii) == id.charAt(ii)) && (meme_id)) {
+	        		if (ii == longeur_id) {
+	        			nom = getPDeuxiemeMot(persone[i]);
+	        			System.out.println("dddd"+id_client);
+	        		}
+	        		
+	        		
+	        	} else {
+					meme_id = false;
+				}
+        	}
+        }
         return nom;
     }
 }
