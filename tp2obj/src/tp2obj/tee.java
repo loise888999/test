@@ -18,14 +18,14 @@ public class tee {
         //unObjetClient.afficheFichier();
         //System.out.println(unObjetClient.trouverNom("102"));
         
-		File fichier = new File("client.txt");
-        String[] tableu = unObjetClient.retourneFichier(fichier);
+		
+        String[] tableu = unObjetClient.retourneFichier();
     	
     	unObjetClient.afficheFichier();
     	//unObjetClient.getPremierMot(tableu[0]);
     	//unObjetClient.getPDeuxiemeMot(tableu[0]);
     	String name;
-    	name = unObjetClient.trouverNom("102");
+    	name = unObjetClient.trouverNom("103");
     	System.out.println(name);
 	}
 

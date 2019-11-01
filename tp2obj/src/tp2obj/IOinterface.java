@@ -26,7 +26,7 @@ public interface IOinterface
      * @param un fichier
      * @return String[] un tableau de String
      */
-    String[] retourneFichier(File myObject);
+    String[] retourneFichier();
     
     /**
      * 

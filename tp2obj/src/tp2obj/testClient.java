@@ -19,7 +19,7 @@ public class testClient
     public testClient(Client a)
     {
     	
-    	Client unObjetClient= new Client("client.txt");
+    	//Client unObjetClient= new Client("client.txt");
         //unObjetClient.ajouteEnregistrement("101 Allard");
         //unObjetClient.ajouteEnregistrement("102 Salvar");
         //unObjetClient.ajouteEnregistrement("103 Mayar");
@@ -30,14 +30,14 @@ public class testClient
         //System.out.println(unObjetClient.trouverNom("102"));
         
     	
-        String[] tableu = unObjetClient.retourneFichier(null);
+        //String[] tableu = unObjetClient.retourneFichier(null);
     	
-    	unObjetClient.afficheFichier();
-    	unObjetClient.getPremierMot(tableu[0]);
-    	unObjetClient.getPDeuxiemeMot(tableu[0]);
-    	String name;
-    	name = unObjetClient.trouverNom("102");
-    	System.out.println(name);
+    	//unObjetClient.afficheFichier();
+    	//unObjetClient.getPremierMot(tableu[0]);
+    	//unObjetClient.getPDeuxiemeMot(tableu[0]);
+    	//String name;
+    	//name = unObjetClient.trouverNom("102");
+    	//System.out.println(name);
         
  
     }

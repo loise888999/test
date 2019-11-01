@@ -58,12 +58,12 @@ public class IOFichier implements IOinterface, Phrase
      * @param
      * @return String[] un tableau de String
      */
-    public String[] retourneFichier(File myObject)
+    public String[] retourneFichier()
     {	
     	int i=0;
 		try {
 			
-		    Scanner scanner = new Scanner(myObject);
+		    Scanner scanner = new Scanner(new File(nomFichier));
 		    scanner.useDelimiter("\n");
 		    while (scanner.hasNextLine()) {
 				
@@ -165,11 +165,12 @@ public class IOFichier implements IOinterface, Phrase
     	boolean trouver = false;
     	for (i = 0; i <= tableau.length-1;i++) {
     		if (!trouver) {
-    		
+    			
 	    		tableux_int=Integer.parseInt(getPremierMot(tableau[i]));
 	    		if (tableux_int == id_int ) {
 	    			nom = getPDeuxiemeMot(tableau[i]);
 	    			trouver = true;
+	    			
 	    		}	
     		}
     	}
