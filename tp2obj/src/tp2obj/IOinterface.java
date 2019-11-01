@@ -29,6 +29,7 @@ public interface IOinterface
     String[] retourneFichier(File myObject);
     
     /**
+     * 
      * ajoute l'enregistrement à la fin du fichier
      *
      * @param  enr    l'enregistrement à ajouter au fichier
