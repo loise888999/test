@@ -30,7 +30,8 @@ public class IOFichier implements IOinterface, Phrase
     public IOFichier(String nomF)
     {
         // initialisation des variables d'instance
-        nomFichier = "client.txt";
+        nomFichier = nomF;
+   
     }
 
     /**
@@ -42,12 +43,11 @@ public class IOFichier implements IOinterface, Phrase
     public void afficheFichier()
     {
         // Insérez votre code ici
-    	int length = tableau.length;
+    	Integer length = tableau.length;
     	for (int i = 0; i  < length ; i++) {
         	if (tableau[i] != null) {
         		System.out.println(tableau[i]);
         	}
-        	
         }
     }
     
@@ -63,14 +63,12 @@ public class IOFichier implements IOinterface, Phrase
     	int i=0;
 		try {
 			
-		    Scanner scanner = new Scanner(new File(nomFichier));
+		    Scanner scanner = new Scanner(myObject);
 		    scanner.useDelimiter("\n");
 		    while (scanner.hasNextLine()) {
 				
 				tableau[i] = scanner.nextLine();
 				i++;
-				//System.out.println(scanner.nextLine());
-				
 			}
 			scanner.close();
 		} catch (Exception e) {	
@@ -110,13 +108,17 @@ public class IOFichier implements IOinterface, Phrase
     public String getPremierMot(String enr) {
     	Boolean pas_espace = new Boolean(true);
     	String mot_premiert = "";
+    	
     	for (int i = 0; (i < enr.length())&& (pas_espace)  ; i++) {
     		char c = enr.charAt(i);
     		if ( c != ' ') {
     			mot_premiert += c;
-    			
+    		
     		} else {
     			pas_espace = false;
+    		}
+    		if (mot_premiert == "null") {
+    			mot_premiert="";
     		}
 		}
     	//System.out.println(mot_premiert);
@@ -142,9 +144,7 @@ public class IOFichier implements IOinterface, Phrase
     			
     		}
 		}
-   
-    	//System.out.println(deusiem_mot);
-    	
+
     	return deusiem_mot;
     }
     
@@ -158,31 +158,22 @@ public class IOFichier implements IOinterface, Phrase
     public String trouverNom(String id)
     {
         // Insérez votre code ici
-        String nom = "invalid";
-        String id_client;
-        Integer longeur_id;
-        Boolean meme_id = true;
-        String[] persone = this.retourneFichier(null);
-        longeur_id = id.length();
-        for( int i = 0; i < persone.length; i++ ) {
-        	
-        	//System.out.println(persone[i]+i);
-        	id_client=getPremierMot(persone[i]);
-        	
-        	for (int ii = 0; ii < id.length();ii++) {
-        		
-	        	if ((id_client.charAt(ii) == id.charAt(ii)) && (meme_id)) {
-	        		if (ii == longeur_id) {
-	        			nom = getPDeuxiemeMot(persone[i]);
-	        			System.out.println("dddd"+id_client);
-	        		}
-	        		
-	        		
-	        	} else {
-					meme_id = false;
-				}
-        	}
-        }
+    	String nom ="non Trouver";
+    	Integer id_int = Integer.parseInt(id);
+    	Integer tableux_int;
+    	Integer i;
+    	boolean trouver = false;
+    	for (i = 0; i <= tableau.length-1;i++) {
+    		if (!trouver) {
+    		
+	    		tableux_int=Integer.parseInt(getPremierMot(tableau[i]));
+	    		if (tableux_int == id_int ) {
+	    			nom = getPDeuxiemeMot(tableau[i]);
+	    			trouver = true;
+	    		}	
+    		}
+    	}
+    	
         return nom;
     }
 }

@@ -23,7 +23,7 @@ public interface IOinterface
     /**
      * retourne tout le fichier dans un tableau de String
      *
-     * @param
+     * @param un fichier
      * @return String[] un tableau de String
      */
     String[] retourneFichier(File myObject);

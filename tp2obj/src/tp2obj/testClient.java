@@ -19,13 +19,13 @@ public class testClient
     public testClient(Client a)
     {
     	
-    	Client unObjetClient= new Client("clients.txt");
-        unObjetClient.ajouteEnregistrement("101 Allard");
-        unObjetClient.ajouteEnregistrement("102 Salvar");
-        unObjetClient.ajouteEnregistrement("103 Mayar");
-        unObjetClient.ajouteEnregistrement("104 Makil");
-        unObjetClient.ajouteEnregistrement("105 Poyld");
-        unObjetClient.ajouteEnregistrement("106 Deyio");
+    	Client unObjetClient= new Client("client.txt");
+        //unObjetClient.ajouteEnregistrement("101 Allard");
+        //unObjetClient.ajouteEnregistrement("102 Salvar");
+        //unObjetClient.ajouteEnregistrement("103 Mayar");
+        //unObjetClient.ajouteEnregistrement("104 Makil");
+        //unObjetClient.ajouteEnregistrement("105 Poyld");
+        //unObjetClient.ajouteEnregistrement("106 Deyio");
         //unObjetClient.afficheFichier();
         //System.out.println(unObjetClient.trouverNom("102"));
         
@@ -42,7 +42,8 @@ public class testClient
  
     }
 
-    /**
+
+	/**
      * Un exemple de méthode - remplacez ce commentaire par le vôtre
      *
      * @param  y   le paramètre de la méthode
